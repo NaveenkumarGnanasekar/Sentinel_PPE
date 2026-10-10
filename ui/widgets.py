@@ -94,7 +94,7 @@ class DonutChart(QFrame):
         outer.addWidget(header)
 
         self.canvas = _MplCanvas(width=4, height=3.4)
-        outer.addWidget(self.canvas)
+        outer.addWidget(self.canvas, 1)  # give the chart all spare height (title stays compact)
         self.ax = self.canvas.fig.add_subplot(111)
         self.update_data({})
 
@@ -146,7 +146,7 @@ class BarChart(QFrame):
         outer.addWidget(header)
 
         self.canvas = _MplCanvas(width=5, height=3.4)
-        outer.addWidget(self.canvas)
+        outer.addWidget(self.canvas, 1)  # give the chart all spare height (title stays compact)
         self.ax = self.canvas.fig.add_subplot(111)
         self.update_data({})
 

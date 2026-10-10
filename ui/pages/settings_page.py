@@ -62,7 +62,7 @@ class SettingsPage(QWidget):
         info = QLabel(
             "Changes apply the next time monitoring is started.\n"
             "Class map (from the trained model): 1=No Vest, 2=No Helmet, "
-            "3=Safety Vest, 4=Helmet."
+            "3=Safety Vest, 4=Shoes."
         )
         info.setStyleSheet(f"color: {theme.TEXT_MUTED}; font-size: 11px;")
         info.setWordWrap(True)

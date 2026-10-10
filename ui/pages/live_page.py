@@ -23,7 +23,7 @@ CLASS_MAP = {
     1: ("No Vest", theme.DANGER),
     2: ("No Helmet", theme.DANGER),
     3: ("Safety Vest", theme.SAFE),
-    4: ("Helmet", theme.SAFE),
+    4: ("Shoes", theme.SAFE),
 }
 
 

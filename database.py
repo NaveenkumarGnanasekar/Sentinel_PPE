@@ -23,6 +23,8 @@ from PyQt5.QtCore import QMutex, QMutexLocker
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "detections.db")
 
+VIOLATION_CLASS_IDS = {1, 2}  # 1 = No Vest, 2 = No Helmet
+
 TIME_BUCKETS = [
     ("06:00 - 12:00", 6, 12),
     ("12:00 - 18:00", 12, 18),
@@ -106,8 +108,10 @@ class DetectionDB:
                     time_buckets[label] += 1
                     break
 
-        violations = sum(count for name, count in class_counts.items()
-                          if "no " in name.lower())
+        # Violations are identified by class id (1 = No Vest, 2 = No Helmet),
+        # the same rule used by the detection worker and the Logs page.
+        # (Matching on the class *name* missed "NO-Safety Vest".)
+        violations = sum(1 for row in rows if row[1] in VIOLATION_CLASS_IDS)
 
         return {
             "rows": rows,

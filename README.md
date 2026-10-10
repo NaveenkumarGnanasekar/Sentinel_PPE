@@ -214,9 +214,4 @@ Being upfront about what this version does and doesn't do:
 - Ideas: email/SMS/Telegram alerts, snapshot capture on violation, per-person reports, a larger and more
   diverse training set, and ONNX/TensorRT export for faster edge inference.
 
-## Credits
 
-Detection pipeline, trained model and dataset originate from **ApyCoder**'s
-[Real-Time-PPE-Detection-with-Django-and-Yolo](https://github.com/ApyCoder1/Real-Time-PPE-Detection-with-Django-and-Yolo)
-(MIT License). This project re-implements the platform as a native PyQt5 desktop application with a new UI,
-live analytics, log export and configuration — built for academic / college project use.
